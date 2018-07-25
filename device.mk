@@ -27,13 +27,20 @@ DEVICE_PACKAGE_OVERLAYS += \
 # GPS libs
 #Somehow CM looks for this file with another name
 #I'l keep the stock ones there too.
-#PRODUCT_COPY_FILES += \
-	#$(LOCAL_PATH)/vendor/system/lib64/hw/gps47531.default.so:system/lib64/hw/gps.hi3635.so
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/vendor/system/lib64/hw/gps47531.default.so:system/lib64/hw/gps.hi3635.so
 
 # FM RADIO quick hack to copy renamed files, does cm looks for default?
-#PRODUCT_COPY_FILES += \
-#	$(LOCAL_PATH)/vendor/system/lib/hw/fm.bcm.hi3635.so:system/lib/hw/fm.bcm.default.so \
-#	$(LOCAL_PATH)/vendor/system/lib64/hw/fm.bcm.hi3635.so:system/lib64/hw/fm.bcm.default.so
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/vendor/system/lib/hw/fm.bcm.hi3635.so:system/lib/hw/fm.bcm.default.so \
+	$(LOCAL_PATH)/vendor/system/lib64/hw/fm.bcm.hi3635.so:system/lib64/hw/fm.bcm.default.so
+
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    VisualizationWallpapers \
+    librs_jni
 
 # CAMERA
 PRODUCT_PACKAGES += \
